@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Proyecto Fexco (nombre provisional — ajustar)
 
 Monorepo con **pnpm workspaces**: API en NestJS, frontend en Next.js, tipos compartidos y base de datos en Supabase.
@@ -189,3 +190,6 @@ asi que tomarlo en cuenta
 Ejemplo de rama HU: feat/G1-HU2-login
 
 ---
+=======
+# umssInspira2
+>>>>>>> d91b5aca1af436b5f3c9cd90f74571ca8ddf9068
