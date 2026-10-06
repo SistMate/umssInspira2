@@ -4,17 +4,14 @@ import { Injectable } from '@nestjs/common';
 export class HabilidadesService {
   private habilidades = [];
 
-  findAll() {
+  obtenerCatalogo() {
     return this.habilidades;
   }
 
-  findOne(id: number) {
-    return this.habilidades.find((habilidad) => habilidad.id === id);
-  }
-
-  create(data: any) {
+  registrar(egresadoId: string, data: any) {
     const nuevaHabilidad = {
       id: this.habilidades.length + 1,
+      egresadoId,
       ...data,
     };
 
@@ -23,7 +20,13 @@ export class HabilidadesService {
     return nuevaHabilidad;
   }
 
-  update(id: number, data: any) {
+  listarPorEgresado(egresadoId: string) {
+    return this.habilidades.filter(
+      (habilidad) => habilidad.egresadoId === egresadoId,
+    );
+  }
+
+  actualizar(id: number, data: any) {
     const index = this.habilidades.findIndex(
       (habilidad) => habilidad.id === id,
     );
@@ -40,7 +43,7 @@ export class HabilidadesService {
     return this.habilidades[index];
   }
 
-  remove(id: number) {
+  eliminar(id: number) {
     const index = this.habilidades.findIndex(
       (habilidad) => habilidad.id === id,
     );
@@ -49,10 +52,10 @@ export class HabilidadesService {
       return null;
     }
 
-    const habilidadEliminada = this.habilidades[index];
+    const eliminada = this.habilidades[index];
 
     this.habilidades.splice(index, 1);
 
-    return habilidadEliminada;
+    return eliminada;
   }
 }
