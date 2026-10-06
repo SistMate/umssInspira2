@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class HabilidadesService {
-  private habilidades = [];
+  private habilidades: any[] = [];
 
   obtenerCatalogo() {
     return this.habilidades;
