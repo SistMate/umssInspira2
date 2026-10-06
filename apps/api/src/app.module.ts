@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { HabilidadesModule } from './habilidades/habilidades.module';
+import { HabilidadesModule } from './modules/habilidades/habilidades.module';
 
 @Module({
   imports: [
